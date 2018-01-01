@@ -1,7 +1,10 @@
 {
   "name": "bible-greek-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "start": "node lib/app.js",
+    "prod": "pm2 start --name bible-greek-api lib/app.js"
+  },
   "repository": "git@github.com:FujiHaruka/bible-greek-api.git",
   "author": "FujiHaruka",
   "license": "MIT",
