@@ -2,6 +2,10 @@ const strongsGreekDict = require('../../ext/strongs/greek/strongs-greek-dictiona
 if (!strongsGreekDict) {
   throw new Error('Incorrect import strongs-greek-dictionary')
 }
+const R = require('ramda')
+const indexById = R.indexBy(R.prop('id'))
+const greekJaArray = require('../../assets/strong_greek_ja')
+const greekJa = indexById(greekJaArray)
 const {GreekWord} = require('../../lib/models')
 
 async function prepareGreekWord ({force = false}) {
@@ -18,7 +22,7 @@ async function prepareGreekWord ({force = false}) {
         id,
         lemma,
         def: (strongs || kjv).trim(),
-        ja: '' // TODO implement
+        ja: greekJa[id].ja
       }
     })
   try {
