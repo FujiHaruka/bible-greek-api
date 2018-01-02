@@ -1,6 +1,6 @@
 {
   "name": "bible-greek-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "start": "node lib/app.js",
     "prod": "pm2 start --name bible-greek-api lib/app.js"
